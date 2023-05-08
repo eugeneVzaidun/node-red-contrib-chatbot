@@ -27,7 +27,7 @@ module.exports = function(RED) {
         return;
       }
       // get vars
-      const fieldValue = node.fieldValue;
+      const fieldValue = msg.payload.fieldValue;
       const command = utils.extractValue('string', 'command', node, msg, false);
       const fieldType = utils.extractValue('string', 'fieldType', node, msg, false);
       const fieldName = utils.extractValue('string', 'fieldName', node, msg, false);
@@ -65,7 +65,7 @@ module.exports = function(RED) {
             break;
           case 'json':
             try {
-              task = when(chatContext.set(fieldName, JSON.parse(fieldValue)));
+              task = when(chatContext.set(fieldName, fieldValue ));
             } catch(e) {
               done('Unable to parse json in context node');
               return;

@@ -30,11 +30,11 @@
       return 'Context' + (this.command != null ? ' (' + this.command + ')' : '');
     },
     oneditprepare: function() {
-      $('#node-input-fieldValue').typedInput({
-        'default': 'str',
-        types: ['str','num','bool', 'json'],
-        typeField: $('#node-input-fieldType')
-      });
+      // $('#node-input-fieldValue').typedInput({
+      //   'default': 'str',
+      //   types: ['str','num','bool', 'json'],
+      //   typeField: $('#node-input-fieldType')
+      // });
       $('#node-input-command').change(function() {
         var command = $(this).val();
         $('.only-for').hide();
